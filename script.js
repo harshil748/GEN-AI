@@ -198,10 +198,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		// First, display the raw JSON
 		const jsonOutput = document.createElement("pre");
-		jsonOutput.style.background = "#eee";
-		jsonOutput.style.padding = "15px";
-		jsonOutput.style.borderRadius = "5px";
-		jsonOutput.style.whiteSpace = "pre-wrap";
 		jsonOutput.textContent = JSON.stringify(data, null, 2);
 		resultsCards.appendChild(jsonOutput);
 

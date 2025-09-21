@@ -12,7 +12,8 @@ export const auth = betterAuth({
 	emailAndPassword: {
 		enabled: true,
 	},
-	plugins: [bearer()],
+	plugins: [ bearer() ],
+	autoCreateUser: true,
 });
 
 // Session validation helper

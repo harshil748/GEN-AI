@@ -12,6 +12,7 @@ import { Label } from "@/components/ui/label";
 import { authClient } from "@/lib/auth-client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function SignInPage() {
 	const [email, setEmail] = useState("");
@@ -48,7 +49,16 @@ export default function SignInPage() {
 			<div className='w-full max-w-md'>
 				<Card className='border-none shadow-lg bg-transparent'>
 					<CardHeader>
-						<CardTitle className='text-2xl text-white'>MargdarshAI</CardTitle>
+						<div className='flex items-center gap-2'>
+							<Image
+								src='/logo.png'
+								alt='MargdarshAI Logo'
+								width={50}
+								height={50}
+								className='rounded-full'
+							/>
+							<CardTitle className='text-2xl text-white'>MargdarshAI</CardTitle>
+						</div>
 						<CardDescription>
 							Personalized Career and Skills Advisor
 						</CardDescription>

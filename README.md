@@ -1,8 +1,5 @@
 # MargdarshAI - Personalized Career & Skills Advisor
 
-![MargdarshAI Logo](./public/logo.png)
-
-
 Welcome to **MargdarshAI**, a web application designed to provide personalized career and skills guidance. Built with a modern tech stack, this platform helps users discover career paths tailored to their academic background, interests, and aspirations.
 
 ## ✨ Key Features

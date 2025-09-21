@@ -170,7 +170,7 @@ export default function Home() {
 						<Badge variant='secondary'>Deploy: Firebase + Genkit</Badge>
 						<Badge variant='secondary'>Grounding: Vertex AI Search + RAG</Badge>
 						<Badge variant='secondary'>Frontend: React/Tailwind</Badge>
-						<Badge variant='secondary'>Hosting: Vibecode/Orchids</Badge>
+						<Badge variant='secondary'>Hosting: Github/Vercel</Badge>
 					</div>
 				</div>
 			</section>

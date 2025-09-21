@@ -12,8 +12,18 @@ export const auth = betterAuth({
 	emailAndPassword: {
 		enabled: true,
 	},
-	plugins: [ bearer() ],
+	plugins: [bearer()],
 	autoCreateUser: true,
+
+	// 👇 Add this hook to prevent null names
+	events: {
+		onUserCreate: async (user, ctx) => {
+			if (!user.name || user.name.trim() === "") {
+				user.name = user.email?.split("@")[0] ?? "User";
+			}
+			return user;
+		},
+	},
 });
 
 // Session validation helper

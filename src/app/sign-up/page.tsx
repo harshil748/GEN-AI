@@ -15,6 +15,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function SignUpPage() {
+	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [loading, setLoading] = useState(false);
@@ -31,6 +32,7 @@ export default function SignUpPage() {
 		const { error } = await authClient.signUp.email({
 			email,
 			password,
+			name,
 		});
 
 		setLoading(false);
@@ -48,7 +50,7 @@ export default function SignUpPage() {
 					<CardHeader>
 						<CardTitle className='text-2xl'>Create an account</CardTitle>
 						<CardDescription>
-							Enter your email below to create your account
+							Enter your details below to create your account
 						</CardDescription>
 					</CardHeader>
 					<CardContent>
@@ -63,6 +65,16 @@ export default function SignUpPage() {
 								</Button>
 							</div>
 						:	<form className='space-y-4' onSubmit={handleSignUp}>
+								<div className='space-y-1'>
+									<Label htmlFor='name'>Name</Label>
+									<Input
+										id='name'
+										type='text'
+										value={name}
+										onChange={(e) => setName(e.target.value)}
+										required
+									/>
+								</div>
 								<div className='space-y-1'>
 									<Label htmlFor='email'>Email</Label>
 									<Input

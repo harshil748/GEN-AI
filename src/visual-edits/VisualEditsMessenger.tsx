@@ -1,5 +1,5 @@
-import React from "react";
+import * as React from "react";
 
-export default function VisualEditsMessenger(): JSX.Element | null {
-  return null;
+export default function VisualEditsMessenger(): React.ReactElement | null {
+	return null;
 }

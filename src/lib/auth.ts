@@ -17,7 +17,10 @@ export const auth = betterAuth({
 
 	// 👇 Add this hook to prevent null names
 	events: {
-		onUserCreate: async (user, ctx) => {
+		onUserCreate: async (
+			user: { name: string | null; email: string | null },
+			ctx: any
+		) => {
 			if (!user.name || user.name.trim() === "") {
 				user.name = user.email?.split("@")[0] ?? "User";
 			}

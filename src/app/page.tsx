@@ -58,15 +58,15 @@ export default function Home() {
 			...patched,
 			subjects: subjects
 				.split(",")
-				.map((s) => s.trim())
+				.map((s: string) => s.trim())
 				.filter(Boolean),
 			skills: skills
 				.split(",")
-				.map((s) => s.trim())
+				.map((s: string) => s.trim())
 				.filter(Boolean),
 			interests: (interests || patched.interests?.join(", ") || "")
 				.split(",")
-				.map((s) => s.trim())
+				.map((s: string) => s.trim())
 				.filter(Boolean),
 			aspirations: aspirations.trim() || patched.aspirations,
 		};

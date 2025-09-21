@@ -27,12 +27,8 @@ const nextConfig: NextConfig = {
 			},
 		},
 	},
-};
-
-const nextConfig = {
 	experimental: {
 		// allow LAN IPs during dev
-		allowedDevOrigins: ["http://192.168.0.101:3000", "http://localhost:3000"],
 	},
 };
 

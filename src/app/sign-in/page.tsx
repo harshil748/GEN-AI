@@ -86,6 +86,14 @@ export default function SignInPage() {
 							<Button type='submit' className='w-full' disabled={loading}>
 								Sign in with Email
 							</Button>
+							<Button
+								type='button'
+								variant='outline'
+								className='w-full'
+								onClick={() => router.push("/sign-up")}
+								disabled={loading}>
+								Create new user
+							</Button>
 						</form>
 						{error && <p className='text-red-500 text-sm'>{error}</p>}
 						<p className='text-xs text-muted-foreground pt-2'>

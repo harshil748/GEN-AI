@@ -44,11 +44,11 @@ export default function SignInPage() {
 	};
 
 	return (
-		<div className="min-h-screen flex items-center justify-center p-6 bg-[url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center">
-			<div className='backdrop-blur-sm bg-white/80 dark:bg-black/40 rounded-xl w-full max-w-md'>
+		<div className='min-h-screen flex items-center justify-center p-6 bg-black'>
+			<div className='w-full max-w-md'>
 				<Card className='border-none shadow-lg bg-transparent'>
 					<CardHeader>
-						<CardTitle className='text-2xl'>MargdarshAI</CardTitle>
+						<CardTitle className='text-2xl text-white'>MargdarshAI</CardTitle>
 						<CardDescription>
 							Personalized Career and Skills Advisor
 						</CardDescription>
@@ -63,17 +63,22 @@ export default function SignInPage() {
 						<div className='text-center text-sm text-muted-foreground'>or</div>
 						<form className='space-y-3' onSubmit={handleEmailLogin}>
 							<div className='space-y-1'>
-								<Label htmlFor='email'>Email</Label>
+								<Label htmlFor='email' className='text-white'>
+									Email
+								</Label>
 								<Input
 									id='email'
 									type='email'
 									value={email}
 									onChange={(e) => setEmail(e.target.value)}
 									required
+									className='text-white'
 								/>
 							</div>
 							<div className='space-y-1'>
-								<Label htmlFor='password'>Password</Label>
+								<Label htmlFor='password' className='text-white'>
+									Password
+								</Label>
 								<Input
 									id='password'
 									type='password'
@@ -81,6 +86,7 @@ export default function SignInPage() {
 									value={password}
 									onChange={(e) => setPassword(e.target.value)}
 									required
+									className='text-white'
 								/>
 							</div>
 							<Button type='submit' className='w-full' disabled={loading}>

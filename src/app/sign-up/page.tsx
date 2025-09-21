@@ -44,11 +44,13 @@ export default function SignUpPage() {
 	};
 
 	return (
-		<div className="min-h-screen flex items-center justify-center p-6 bg-[url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center">
-			<div className='backdrop-blur-sm bg-white/80 dark:bg-black/40 rounded-xl w-full max-w-md'>
+		<div className='min-h-screen flex items-center justify-center p-6 bg-black'>
+			<div className='w-full max-w-md'>
 				<Card className='border-none shadow-lg bg-transparent'>
 					<CardHeader>
-						<CardTitle className='text-2xl'>Create an account</CardTitle>
+						<CardTitle className='text-2xl text-white'>
+							Create an account
+						</CardTitle>
 						<CardDescription>
 							Enter your details below to create your account
 						</CardDescription>
@@ -66,27 +68,35 @@ export default function SignUpPage() {
 							</div>
 						:	<form className='space-y-4' onSubmit={handleSignUp}>
 								<div className='space-y-1'>
-									<Label htmlFor='name'>Name</Label>
+									<Label htmlFor='name' className='text-white'>
+										Name
+									</Label>
 									<Input
 										id='name'
 										type='text'
 										value={name}
 										onChange={(e) => setName(e.target.value)}
 										required
+										className='text-white'
 									/>
 								</div>
 								<div className='space-y-1'>
-									<Label htmlFor='email'>Email</Label>
+									<Label htmlFor='email' className='text-white'>
+										Email
+									</Label>
 									<Input
 										id='email'
 										type='email'
 										value={email}
 										onChange={(e) => setEmail(e.target.value)}
 										required
+										className='text-white'
 									/>
 								</div>
 								<div className='space-y-1'>
-									<Label htmlFor='password'>Password</Label>
+									<Label htmlFor='password' className='text-white'>
+										Password
+									</Label>
 									<Input
 										id='password'
 										type='password'
@@ -94,6 +104,7 @@ export default function SignUpPage() {
 										value={password}
 										onChange={(e) => setPassword(e.target.value)}
 										required
+										className='text-white'
 									/>
 								</div>
 								<Button type='submit' className='w-full' disabled={loading}>
@@ -102,7 +113,7 @@ export default function SignUpPage() {
 								{error && <p className='text-red-500 text-sm'>{error}</p>}
 							</form>
 						}
-						<div className='mt-4 text-center text-sm'>
+						<div className='mt-4 text-center text-sm text-white'>
 							Already have an account?{" "}
 							<Link href='/sign-in' className='underline'>
 								Sign in

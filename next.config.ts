@@ -27,9 +27,8 @@ const nextConfig: NextConfig = {
 			},
 		},
 	},
-	experimental: {
-		// allow LAN IPs during dev
-	},
+	// ⚡ Force static export
+	output: "export",
 };
 
 module.exports = nextConfig;

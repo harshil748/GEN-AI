@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { useSession, authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 
 export default function ProfilePage() {
 	const { data: session } = useSession();
@@ -16,6 +17,7 @@ export default function ProfilePage() {
 	const [interests, setInterests] = useState("");
 	const [strengths, setStrengths] = useState("");
 	const [saved, setSaved] = useState(false);
+	const router = useRouter();
 
 	useEffect(() => {
 		if (!storageKey) return;
@@ -64,7 +66,9 @@ export default function ProfilePage() {
 	return (
 		<div className='min-h-screen p-6 max-w-3xl mx-auto'>
 			<div className='flex items-center justify-between mb-6'>
-				<h1 className='text-2xl font-semibold'>Edit Profile</h1>
+				<Button variant='outline' onClick={() => router.push("/")}>
+					&larr; Back to Dashboard
+				</Button>
 				<Button variant='secondary' onClick={signOut}>
 					Sign out
 				</Button>
@@ -103,7 +107,7 @@ export default function ProfilePage() {
 						<Input
 							value={city}
 							onChange={(e) => setCity(e.target.value)}
-							placeholder='Bhavnagar, Gujarat'
+							placeholder='Bangalore, India'
 						/>
 					</div>
 					<div className='sm:col-span-2'>
@@ -132,7 +136,7 @@ export default function ProfilePage() {
 			</Card>
 			<p className='text-sm text-muted-foreground mt-4'>
 				Tech stack (demo): Gemini 2.5 Pro • Firebase + Genkit • Vertex AI Search
-				(RAG) • React/Tailwind • Hosting: Vibecode/Orchids
+				(RAG) • React/Tailwind • Hosting: Github/Vercel
 			</p>
 		</div>
 	);
